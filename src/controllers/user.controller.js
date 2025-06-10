@@ -38,6 +38,27 @@ const loginuser= async (req,res)=>{
    }
 }
 
+const getmemberdetails= async(req,res)=>{
+    const {id}=req.params;
+      try {
+          const user =await User.findById(id);
+          if(!user){
+              return res.status(404).json({messsage:"User not found"});
+            }
+              return res.status(200).json({
+                  message:"User details fetched successfully",
+              user: {
+                email:user.email,
+                phone:user.phone,
+                firstname:user.firstname,
+              },
+            
+              });
+      } catch (error) {
+            res.status(500).json({message:"Internal server error",error:error.message});
+        
+      }
 
-export {registerUser,loginuser};
+}
+export {registerUser,loginuser,getmemberdetails};
     
