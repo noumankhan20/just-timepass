@@ -1,4 +1,13 @@
-import {resgisterUser,
+import {registerUser,
     loginuser,
 } from "../controllers/user.controller.js";
-import express from "express";
+import {Router} from "express";
+const router= Router();
+
+router.post("/register",registerUser);
+router.post("/login",loginuser);
+
+
+
+
+export default router;
