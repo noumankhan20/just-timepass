@@ -22,3 +22,10 @@ app.listen(process.env.PORT,()=>{
 
 // console.log("abhi karunga  tabahi");
 app.use("/api/user",userrouter);
+
+
+
+
+
+
+
