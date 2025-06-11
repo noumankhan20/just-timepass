@@ -64,7 +64,22 @@ const getmemberdetails= async(req,res)=>{
 }
 
 
+const getAllusers= async (req,res)=>{
+    try {
+        const users = await User.find({},'email phone firstname age lastname');
+        return res.status(200).json({
+            message:"All users fetched successfully",
+        users});
+    } catch (error) {
+        return res.status(500).json({
+            message:"Internal server error",
+            error:error.message
+        });
+        
+    }
+}
 
 
-export {registerUser,loginuser,getmemberdetails};
+
+export {registerUser,loginuser,getmemberdetails,getAllusers};
     
