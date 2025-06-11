@@ -51,6 +51,8 @@ const getmemberdetails= async(req,res)=>{
                 email:user.email,
                 phone:user.phone,
                 firstname:user.firstname,
+                age:user.age,
+                lastname:user.lastname
               },
             
               });
@@ -60,5 +62,9 @@ const getmemberdetails= async(req,res)=>{
       }
 
 }
+
+
+
+
 export {registerUser,loginuser,getmemberdetails};
     

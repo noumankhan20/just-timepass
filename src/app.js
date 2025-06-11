@@ -13,7 +13,7 @@ app.use(express.json());
 connectDB();
 
 app.get("/",(req,res)=>{
-    res.send("hello world")
+    res.send("Server is up and running")
 });
 
 app.listen(process.env.PORT,()=>{
