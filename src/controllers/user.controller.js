@@ -79,7 +79,27 @@ const getAllusers= async (req,res)=>{
     }
 }
 
+const deleteuser = async(req,res)=>{
+    try {
+        const{email}=req.body;
+        const user = await User.findOneAndDelete({email:email});
+        if (!user){
+            return res.status(404).json({
+                message:"User not found"
+            })
+        }
+        return res.status(200).json({
+            message:"User deleted successfully",
+            user:user
+        })
+    } catch (error) {
+        return res.status(500).json({
+            message:"Internal server error",
+            error:error.message
+        })
+        
+    }
+}
 
-
-export {registerUser,loginuser,getmemberdetails,getAllusers};
+export {registerUser,loginuser,getmemberdetails,getAllusers,deleteuser};
     
