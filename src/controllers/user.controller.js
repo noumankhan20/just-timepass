@@ -36,7 +36,7 @@ const loginuser= async (req,res)=>{
     res.status(500).json({message:"Internal server error",error:error.message});
     
    }
-}
+}   
 
 const getmemberdetails= async(req,res)=>{
     const {id}=req.params;
